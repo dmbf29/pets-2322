@@ -1,0 +1,10 @@
+<div class="container">
+  <h1>Report a Found Pet</h1>
+  <%= simple_form_for @pet do |f| %>
+    <%= f.input :name %>
+    <%= f.input :location %>
+    <%= f.input :found_on, html5: true %>
+    <%= f.input :species, collection: Pet::SPECIES.sort, include_blank: false %>
+    <%= f.submit 'Add', class: 'btn btn-info mt-2' %>
+  <% end %>
+</div>
